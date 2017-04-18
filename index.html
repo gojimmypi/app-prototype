@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        window.adobeid = { client_id: "CometWeb1", redirect_uri: location.href, scope: "AdobeID,openid,creative_cloud,sao.ccprivate", locale: "en-US", uses_redirect_mode: true, optimizations: { enable: true, fastEvents: true, prefetchSuSi: true }, api_parameters: { authorize: { state: { "ac": "xd.adobe.com" } } }, onAccessToken: function (token) { const tokenInfo = adobeIMS.getAccessTokenInfo(); const userProfile = adobeIMS.getUserProfile(); if (userProfile && tokenInfo) { window.signInIMSCallback && window.signInIMSCallback(userProfile.userId, userProfile.name, tokenInfo.access_token); } }, onAccessTokenHasExpired: function () { window.signOutIMSCallback && window.signOutIMSCallback(); }, onReady: function () { const tokenInfo = adobeIMS.getAccessTokenInfo(); const userProfile = adobeIMS.getUserProfile(); if (userProfile && tokenInfo) { window.signInIMSCallback && window.signInIMSCallback(userProfile.userId, userProfile.name, tokenInfo.access_token); } } };
+    </script>
+    <script id="imslib" src="https://static.adobelogin.com/imslib/imslib.min.js" async defer></script>
+    <script src="/bundle.js" async defer></script>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/component-styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>drill</title>
+    <meta name="robots" content="noindex">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+    <!-- Prototype icon link for iOS -->
+    <link rel="apple-touch-icon" href="/images/xd_project_android_192.png" />
+    <!-- Home screen setting & prototype icon link for Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" href="/images/xd_project_android_192.png" />
+    <!-- Prototype icon link for IE -->
+    <link rel="shortcut icon" href="/images/xd_project_android_192.png" />
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+        (function (d) { var config = { 
+            kitId: "apl6lau", 
+            classes: false, 
+            evebts: false, 
+            scriptTimeout: 3000, 
+            async: true }, 
+            
+            h = d.documentElement, 
+            t = setTimeout(function () { 
+                h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; 
+                }, 
+                config.scriptTimeout), 
+                tk = d.createElement("script"), 
+                f = false, 
+                s = d.getElementsByTagName("script")[0], a; 
+                h.className += " wf-loading"; 
+                tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; 
+                tk.async = true;
+                tk.onload = tk.onreadystatechange = function () { 
+                    a = this.readyState; 
+                    if (f || a && a != "complete" && a != "loaded") 
+                        return; 
+                    f = true; 
+                    clearTimeout(t); 
+                    try { Typekit.load(config) } catch (e) { }
+                }; 
+                s.parentNode.insertBefore(tk, s)
+             })(document);
+                                       
+            window.prototypeData = { 
+                "manifest": { "id": "b34300e0-f8da-48a8-b64b-b06f405e1e10", 
+                            "name": "drill", 
+                            "interactions": { 
+                                "id": "0f31bbd6-9014-4633-a605-98e876900a6b", 
+                                "path": "interactions/interactions.json", "version": "0" }, 
+                            "artboards": [{ "id": "ff169e91-d706-4c40-b2cf-2bc34f240363", 
+                                "name": "Android Mobile – 1", 
+                                "bounds": { 
+                                        "width": 360, "x": 0, "y": 0, "height": 640 }, 
+                                "viewport": { "height": 640, "width": 360 }, 
+                                "component": { "id": "5bc21d1a-a4e2-496e-b10c-6f6375522678", 
+                                        "path": "artwork/artboard-ff169e91-d706-4c40-b2cf-2bc34f240363/graphicContent.png",
+                                        "version": "0" } 
+                                    }], 
+                            "dcxUrl": "https://cdn.cp.adobe.io/content/2/dcx/b34300e0-f8da-48a8-b64b-b06f405e1e10/content" 
+                            }, 
+                "configData": { "webappContext": "web", 
+                                "detectedLanguage": "en", 
+                                "detectedLocale": "en-US", 
+                                "environment": "production", 
+                                "featureFlags": { "routing": true, 
+                                     "preserveScroll": true, "authButton": true, 
+                                     "commenting": true, 
+                                     "guestCommenting": true, 
+                                     "annotations": true, "cp": true, "resolveComments": true } 
+                              }, 
+                "linkTemplate": "https://cdn.cp.adobe.io/content/2/dcx/b34300e0-f8da-48a8-b64b-b06f405e1e10/content/{path}/version/{version}", 
+                "ownerId": "A8A96D6D56A261537F000101@AdobeID", 
+                "modifiedDate": 1492464262638 }; 
+                window.prototypeDataLoaded && window.prototypeDataLoaded();
+    </script>
+</body>
+
+</html>
